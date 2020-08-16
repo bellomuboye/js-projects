@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guessing Game</title>
+    <meta name="description" content="This is a Javascript enabled version of a Guessing Game created earlier">
+</head>
+
+<body>
+    <h1>Welcome to Bell's Guessing Game</h1>
+    <p>There are three levels:</p>
+    <ul>
+        <li>Easy: Guess between 1 - 10, You get 6 guesses</li>
+        <li>Medium: Guess between 1 - 20, You get 4 guesses</li>
+        <li>Hard: Guess between 1 - 50, You get 3 guesses</li>
+    </ul>
+    <p>Click the button corresponding to the level</p>
+    <div>
+        <button class="level">Easy</button>
+        <button class="level">Medium</button>
+        <button class="level">Hard</button>
+    </div>
+    <button class="randomGen">Click to Generate Random Number</button> <br/><br/>
+    <input type="text" name = "guess" id="guessInput">
+    <p>Let's see:</p>
+    <p class = "guessResult">Correct!</p>
+    <script src="script.js"></script>
+</body>
+</html>
