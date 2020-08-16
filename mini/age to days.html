@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculator</title>
+
+    <style>
+        #container  {
+            background-color: #000000;
+            color: white;
+            width: 250px;
+            height: 30px;
+            border-radius: 20px;
+            text-align: center;
+            padding-top: 10px;
+            margin-top: 10px;
+            display: none;
+        }
+        
+    </style>
+</head>
+<body>
+    <h2>Calculate your age in days</h2>
+    <div style="margin-bottom: 10px;">
+        <label for="input_1">Type Your Name</label>
+        <input type="text" id="input_1">
+    </div>
+    <div>
+        <label for="input_2">Type Your Age</label>
+        <input type="number" id="input_2" style="margin-left: 10px;">
+    </div>
+    <button id="button" style="margin-top: 10px;">Display the resullt</button>
+    <div id="container"></div>
+    
+<script type="text/javascript">
+    function takeName (name){
+        name = document.getElementById("input_1").value;
+        return name;
+    }
+
+    function takeAge (age) {
+        age = document.getElementById("input_2").value;
+        return age*365
+    }
+    document.getElementById("button").onclick=function(){
+        var x=takeName();
+        var y=takeAge();
+        if (x && y) {
+            document.getElementById("container").innerHTML = x + " Your age in days is " + y + " days";
+            document.getElementById("container").style.display ="block";
+        } else {
+            alert("Please insert your name and age");
+            document.getElementById("container").style.display = "none";
+        }
+    }
+</script>
+</body>
+</html>
