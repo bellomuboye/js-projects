@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Twitter Message</title>
+    <link
+      rel="stylesheet"
+      href="/home/definebell/Downloads/Web Development/Projects/Portfolio/First Design/bootstrap.min.css"
+    />
+    <script src="/home/definebell/Downloads/Web Development/Projects/Portfolio/First Design/jquery-3.4.1.slim.min.js"></script>
+    <script src="/home/definebell/Downloads/Web Development/Projects/Portfolio/First Design/popper.min.js"></script>
+    <script src="/home/definebell/Downloads/Web Development/Projects/Portfolio/First Design/bootstrap.min.js"></script>
+  </head>
+  <style>
+    #countdown-message {
+      background-color: blue;
+      padding: 10px;
+      border-radius: 100%;
+      color: #fff;
+    }
+    .popup  {
+      background-color: rgb(27, 26, 26);
+      position: absolute;
+      width: 50%;
+      top: 100px;
+      right: 30%;
+      color: #ffffff;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <form class = "form" action="">
+        <label class = "label" for="message">Enter your message:</label>
+        <textarea
+          name=""
+          id="message"
+          cols="30"
+          rows="10"
+          class="form-control"
+        ></textarea>
+        <button type="submit">Submit</button>
+      </form>
+      <div style="margin-top: 20px;">
+        <span id="countdown-message">140</span>
+      </div>
+      <p class = "typed"></p>
+      <div class = "popup" style = "display: none;">
+        <p>Edit Message?</p>
+        <form class = "editform" action="">
+          <textarea name="editmessage" id="editmessage" cols="30" rows="10">nn</textarea>
+          <button class = "btn-done" type="submit">Done</button>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      var countdown = 140;
+      var countdownMessage = document.querySelector("#countdown-message");
+      const form = document.querySelector(".form")
+      var message = document.querySelector("#message");
+      const typed = document.querySelector(".typed");
+      const editForm = document.querySelector(".editform");
+      const editMessage = document.querySelector("#editmessage");
+      const btnDone = document.querySelector(".btn-done");
+      const popup = document.querySelector(".popup");
+      const label = document.querySelector(".label");
+
+      label.addEventListener("click", function () {
+        console.log(label.parentElement.querySelector("#message"));
+      })
+
+      typed.addEventListener("click", function (e) {
+        popup.style.display = "block";
+        editMessage.textContent = typed.innerHTML;
+      });
+
+      editForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        typed.textContent = editMessage.value;
+        popup.style.display = "none";
+      })
+
+      message.addEventListener("keyup", function () {
+        countdownMessage.innerHTML = countdown - message.value.length;
+        if (message.value.length > 140) {
+          countdownMessage.style.backgroundColor = "red";
+          message.setAttribute("disabled", "true")
+        } else {
+          countdownMessage.style.backgroundColor = "blue";
+        }
+      });
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const want = message.value;
+        typed.innerHTML = want;message.removeAttribute("disabled")
+        form.reset();
+        
+      })
+    </script>
+  </body>
+</html>
