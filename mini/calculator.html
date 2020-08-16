@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link
+      rel="stylesheet"
+      href="/home/definebell/Downloads/Web Development/Projects/Portfolio/First Design/bootstrap.min.css"
+    />
+    <script src="/home/definebell/Downloads/Web Development/Projects/Portfolio/First Design/jquery-3.4.1.slim.min.js"></script>
+    <script src="/home/definebell/Downloads/Web Development/Projects/Portfolio/First Design/popper.min.js"></script>
+    <script src="/home/definebell/Downloads/Web Development/Projects/Portfolio/First Design/bootstrap.min.js"></script> -->
+    <style>
+        input[type=button]  {
+            width: 30px;
+        }
+        table {
+            float: left;
+            margin-right: 10px;
+        }
+        input#answer    {
+            width: 100px;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <table border="7">
+        <tr>
+            <td colspan = "3">
+                <input type="text" id = "answer">
+            </td>
+            <td>
+                <input type="button" value="="  onclick="equal()">
+            </td>
+        </tr>
+        <tr>
+            <td><input type="button" value="1" onclick="enterNumber(this.value)"></td>
+            <td><input type="button" value="2" onclick="enterNumber(this.value)"></td>
+            <td><input type="button" value="3" onclick="enterNumber(this.value)"></td>
+            <td><input type="button" value="+" onclick="enterOperator(this.value)"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="4" onclick="enterNumber(this.value)"></td>
+            <td><input type="button" value="5" onclick="enterNumber(this.value)"></td>
+            <td><input type="button" value="6" onclick="enterNumber(this.value)"></td>
+            <td><input type="button" value="-" onclick="enterOperator(this.value)"> </td>
+        </tr>
+        <tr>
+            <td><input type="button" value="7" onclick="enterNumber(this.value)"></td>
+            <td><input type="button" value="8" onclick="enterNumber(this.value)"></td>
+            <td><input type="button" value="9" onclick="enterNumber(this.value)"></td>
+            <td><input type="button" value="*" onclick="enterOperator(this.value)"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="C" id="clear"></td>
+            <td><input type="button" value="0" onclick="enterNumber(this.value)"></td>
+            <td><input type="button" value="." onclick="enterNumber(this.value)"></td>
+            <td><input type="button" value="/" onclick="enterOperator(this.value)"></td>
+        </tr>
+    </table>
+    Output: <input type="text" id="output">
+
+    <script>
+        var flag
+        function enterNumber(number) {
+            var x = document.getElementById("answer");
+            x.value+=number;
+            flag = 0;
+        }
+        function enterOperator(operator) {
+            if (flag == 0) {
+                var x = document.getElementById("answer");
+                x.value+=operator;
+                flag = 0;
+            }
+        }
+        
+        (document.getElementById("clear")).addEventListener("click", function () {
+            document.getElementById("answer").value = "";
+            document.getElementById("output").value = "";
+            // window.location.reload();
+        })
+
+        function equal()    {
+            var x = document.getElementById("answer").value;
+            document.getElementById("output").value = eval(x)
+        }
+    </script>
+</body>
+</html>
