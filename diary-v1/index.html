@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Diary</title>
+    <link
+      rel="stylesheet"
+      href="/home/definebell/Downloads/Web Development/Projects/Portfolio/First Design/FontAwesome-Installation/css/all.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/home/definebell/Downloads/Web Development/Projects/Portfolio/First Design/bootstrap.min.css"
+    />
+    <script src="/home/definebell/Downloads/Web Development/Projects/Portfolio/First Design/jquery-3.4.1.slim.min.js"></script>
+    <script src="/home/definebell/Downloads/Web Development/Projects/Portfolio/First Design/popper.min.js"></script>
+    <script src="/home/definebell/Downloads/Web Development/Projects/Portfolio/First Design/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="input-entry">
+        <div class="my-4">
+          <form class="input-entry-form">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Day..."
+              id="input-entry-heading"
+            />
+            <textarea
+              name="input-entry-text"
+              id="input-entry-text"
+              cols="30"
+              rows="10"
+              placeholder="Dear Diary..."
+              class="form-control"
+            ></textarea>
+            <div class="char-counter-cont" style="text-align: right; position: relative; top: -40px; right: 20px;">
+               
+              <span
+                class="char-counter"
+                >200</span
+              >
+              <button type="submit"class = "entry-submit-button btn-dark" >Done</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="existing-entry">
+        <!-- <div class="entry2">
+          <div class="existing-entry-heading" style="border-top: 1px solid;">
+            <h5 class = "entry-heading" style = "display: inline-block;"> Day 1 </h5><i class="arrow-icon fas fa-arrow-down"></i>
+          </div>
+          <div class="existing-entry-text">
+            <p class = "entry-text" >Dear Diary I have an issue</p>
+          </div>
+        </div> -->
+      </div>
+      <div
+        id="popup-whole"
+        class="hide edit-popup-wrapper container mx-auto bg-dark text-light py-5"
+        style="max-width: 400px;"
+      >
+        
+        <div class="mx-auto" style="width: 80%;">
+          <button type="button" class="close">
+          <span>×</span>
+        </button>
+        <p>Edit Entry</p>
+          <form class="edit-popup-form mx-auto">
+            <input type="text" class = "edit-entry-heading form-control">
+            <textarea
+              name="edit-entry-text"
+              id="edit-entry-text"
+              cols="30"
+              rows="10"
+              class="form-control my-2"
+            ></textarea>
+            <button type="submit" class="edit-submit-button btn btn-light">
+              Done
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

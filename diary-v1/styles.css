@@ -1,0 +1,7 @@
+.hide   {
+    display: none !important;
+}
+
+div.existing-entry-heading h5   {
+    display: inline-block;
+}
