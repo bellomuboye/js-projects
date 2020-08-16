@@ -1,3 +1,15 @@
+const form = document.querySelector("#input-form");
+const input = document.querySelector("#input");
+const submitBtn = document.querySelector("#submit-btn");
+
+form.addEventListener("submit", (e) => {
+	e.preventDefault();
+	const inputValue = input.value;
+	console.log(inputValue);
+	console.log(typeof(inputValue));
+})
+
+
 const inputArray = [15,16,16,17,17,17,18,18,18,19,20];
 
 var sumAll = (arr) => {
